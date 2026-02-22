@@ -3,13 +3,9 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 
 class AppUrl {
-  // static String socketUrl = "wss://paktruckapi.hifahdevs.com";
-  static String socketUrl = "ws://51.21.140.23/socket.io/";
+  static String socketUrl = "ws://";
 
-  static const String _liveBaseUrl = "http://51.21.140.23/api";
-  // "https://paktruckapi.hifahdevs.com/api"; // live
-
-  // static const baseUrl = "http://192.168.18.102:3000/api";
+  static const String _liveBaseUrl = "http";
 
   static late String baseUrl;
 
@@ -18,7 +14,6 @@ class AppUrl {
       final localIp = await _getLocalIp();
       if (localIp != null) {
         baseUrl = 'http://$localIp:8000/api';
-        // baseUrl = 'http://13.48.138.129/api';
       } else {
         print('⚠️ Local IP not found, using live URL');
         baseUrl = _liveBaseUrl;
